@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .demo {
+            width: 417px;
+            height: 417px;
+            position: relative;
+            margin: 50px auto
+        }
+
+        #disk {
+            width: 417px;
+            height: 417px;
+            background: url(./img/disk.jpg) no-repeat
+        }
+
+        #start {
+            width: 163px;
+            height: 320px;
+            position: absolute;
+            top: 46px;
+            left: 130px;
+        }
+
+        #start img {
+            cursor: pointer
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="demo">
+    <div id="disk"></div>
+    <div id="start"><img src="./img/start.png" id="startbtn"></div>
+</div>
+
+<button onclick="bb()">点我抽奖</button>
+<p id="last"></p>
+<script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script src="jQueryRotate.js"></script>
+<script src="jquery.easing.1.3.js"></script>
+
+
+<script>
+
+    var a = [];
+    var b, c, price;
+    for (var i = 1; i < 101; i++) {
+        a.push(i);
+    }
+    console.log(a);
+    //   Math.floor(Math.random()*10+1); 1-10 随机数
+
+    function bb() {
+        b = Math.floor(Math.random() * a.length + 1);
+//       console.log(b);
+        c = a.splice(b - 1, 1);
+        $("#last").text("剩余奖品数：" + a.length);
+        if (c < 21 && c > 0) {
+            console.log("一等奖");
+//           console.log(a);
+            price = 60;
+        } else if (c > 20 && c < 51) {
+            console.log("二等奖");
+//           console.log(a);
+            price = 180;
+        } else if (c > 50 && c < 100) {
+            console.log("三等奖");
+//           console.log(a);
+            price = 300;
+        } else {
+            console.log("活动结束");
+            price = 0;
+        }
+        console.log(price);
+        console.log(a);
+        return price;
+
+    }
+
+
+    <!--中奖前台部分-->
+
+
+    $("#startbtn").rotate({
+
+        bind: {
+
+            click: function () {
+
+                bb();
+                $(this).rotate({
+                    duration: 6000, //转动时间间隔（转动速度）
+                    angle: 0,
+                    animateTo: 3600 + price,//转动角度 10圈
+                    easing: $.easing.easeOutSine
+                })
+            }
+        }
+    })
+
+
+</script>
+
+
+</body>
+</html>

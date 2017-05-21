@@ -1,6 +1,6 @@
 # one-week-one-project
 
- [我是大转盘访问地址](http://htmlpreview.github.io/?https://github.com/lifebeatiful/one-week-one-project/blob/master/week_1_%E5%A4%A7%E8%BD%AC%E7%9B%98%E6%8A%BD%E5%A5%96/index.html)
+ [我是大转盘访问地址](https://lifebeatiful.github.io/one-week-one-project/week_1_%E5%A4%A7%E8%BD%AC%E7%9B%98%E6%8A%BD%E5%A5%96/)
  
 ####  需求：
 

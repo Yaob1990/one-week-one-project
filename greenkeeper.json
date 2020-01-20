@@ -1,0 +1,9 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "week_1_大转盘抽奖/lib/bower_components/bootstrap/package.json"
+      ]
+    }
+  }
+}
